@@ -77,6 +77,9 @@ public class Cilent : MonoBehaviour
                         //When the server sends the requirement of calibration.
                         On_Calibration(splitData[1]);
                         break;
+                    case "ROT":
+                        On_Rot(splitData[1]);
+                        break;
                     default:
                         Debug.Log("Invalid Message : " + msg);
                         break;
@@ -152,5 +155,12 @@ public class Cilent : MonoBehaviour
         Debug.Log("Received Calibration Data: " + data);
 
         //To do: Read the current orientation of the virtual handle to the server
+    }
+
+    private void On_Rot(string data)
+    {
+        Debug.Log("Received rotation Data: " + data);
+
+        //To do: set the virtual drill and handle.
     }
 }
